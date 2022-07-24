@@ -1,10 +1,15 @@
-export default function TaskList() {
+import { nanoid } from "nanoid";
+
+export default function TaskList({ taskList }) {
   return (
-    <>
-      <form>
-        <input type="text" placeholder="new task..."></input>
-        <button type="submit">add task</button>
-      </form>
-    </>
+    <ul className="card-container">
+      {taskList.map((task) => {
+        return (
+          <li key={nanoid()} className="card">
+            {task.text}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
