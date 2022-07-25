@@ -12,21 +12,20 @@ import "./components/css/card.css";
 console.clear();
 
 function App() {
-  const [taskList, setTaskList] = useState([
-    {
-      text: "clean the bathroom",
-      key: nanoid(),
-    },
-    {
-      text: "do the dishes",
-      key: nanoid(),
-    },
-  ]);
+  const [inputValue, setInputValue] = useState("");
+  const [taskList, setTaskList] = useState([]);
 
   return (
     <div className="wrapper">
       <Header />
-      <TaskForm />
+      <TaskForm
+        // FORM-Input
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        // TASK-Array
+        taskList={taskList}
+        setTaskList={setTaskList}
+      />
       <TaskList taskList={taskList} />
       <Footer />
     </div>

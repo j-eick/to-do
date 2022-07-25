@@ -5,7 +5,7 @@ export default function TaskList({ taskList }) {
     <ul className="card-container">
       {taskList.map((task) => {
         return (
-          <li key={nanoid()} className="card">
+          <li className="card" key={nanoid()}>
             {task.text}
           </li>
         );
