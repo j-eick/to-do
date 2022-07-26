@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
+import TestUseEffect from "./components/TestUseEffect";
 import "./App.css";
 import "./components/css/header.css";
 import "./components/css/TaskForm.css";
@@ -27,6 +28,7 @@ function App() {
         setTaskList={setTaskList}
       />
       <TaskList taskList={taskList} />
+      <TestUseEffect />
       <Footer />
     </div>
   );
