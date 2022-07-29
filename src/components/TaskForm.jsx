@@ -1,8 +1,8 @@
 import { nanoid } from "nanoid";
 
 export default function AddTask({
-  inputValue,
-  setInputValue,
+  todoText,
+  setTodoText,
   taskList,
   setTaskList,
 }) {
@@ -11,25 +11,26 @@ export default function AddTask({
    */
   function submitHandler(event) {
     event.preventDefault();
-    setTaskList([{ text: inputValue, id: nanoid() }, ...taskList]);
-    setInputValue("");
+    setTaskList([{ text: todoText, id: nanoid() }, ...taskList]);
+    setTodoText("");
   }
 
   function handleChange(event) {
-    setInputValue(event.target.value);
+    setTodoText(event.target.value);
   }
 
   return (
     <div className="form-container">
       <form onSubmit={submitHandler}>
         <input
-          required
-          value={inputValue}
+          value={todoText}
           onChange={handleChange}
           type="text"
           placeholder="new task..."
+          required
         ></input>
         <button type="submit">add task</button>
+        <button type="submit">clear</button>
       </form>
     </div>
   );

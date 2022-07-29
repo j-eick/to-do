@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { nanoid } from "nanoid";
 import Header from "./components/Header";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
-import TestUseEffect from "./components/TestUseEffect";
 import "./App.css";
 import "./components/css/header.css";
 import "./components/css/TaskForm.css";
@@ -13,7 +11,7 @@ import "./components/css/card.css";
 console.clear();
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
+  const [todoText, setTodoText] = useState("");
   const [taskList, setTaskList] = useState([]);
 
   return (
@@ -21,14 +19,13 @@ function App() {
       <Header />
       <TaskForm
         // FORM-Input
-        inputValue={inputValue}
-        setInputValue={setInputValue}
+        todoText={todoText}
+        setTodoText={setTodoText}
         // TASK-Array
         taskList={taskList}
         setTaskList={setTaskList}
       />
       <TaskList taskList={taskList} />
-      <TestUseEffect />
       <Footer />
     </div>
   );

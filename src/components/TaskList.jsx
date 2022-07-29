@@ -6,7 +6,7 @@ export default function TaskList({ taskList }) {
       {taskList.map((task) => {
         return (
           <li className="card" key={nanoid()}>
-            {task.text}
+            <p>{task.text}</p>
           </li>
         );
       })}
